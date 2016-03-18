@@ -4,7 +4,7 @@
     var PATH = root.maze.PATH;
     var CURRENT = root.maze.CURRENT;
 
-   // var mark = [][], x,y,xc,yc, N, i, dx = [1,0,-1,0], dy=[0,-1,0,1];
+
     var xc = 1 ,yc = 1 , N, i, dx = [1,0,-1,0], dy=[0,-1,0,1];
     /**
      * Функция находит путь к выходу и возвращает найденный маршрут
@@ -47,24 +47,27 @@
             console.log(xc + "  " + yc);
         return [
             [1, 0],
-            [xc, yc] // 42 14
+            [xc, yc] 
+
         ];
 
         function CanGO(x, y, dx, dy) {
 
           try{
                 if (dx == -1){
-                    return maze[x + dx][y] != WALL;     // top [x - 1][y] 
+                    return maze[x + dx][y] != WALL;
                 } else if (dx == 1){
-                    return maze[x + dx][y] != WALL;     // bottom [x + 1][y]
+                    return maze[x + dx][y] != WALL;
                 } else if (dy == -1){
-                    return maze[x][y + dy] != WALL;     // left [x][y - 1]
+                    return maze[x][y + dy] != WALL;
                 } else if (dy == 1){
-                    return maze[x][y + dy] != WALL;     // right [x][y + 1]
+                    return maze[x][y + dy] != WALL;
                 }
           } catch (err){
+
              xc = y;
               yc = x;
+
           }
         }
 
